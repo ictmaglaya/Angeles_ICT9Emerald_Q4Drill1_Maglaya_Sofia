@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 Drill 1</title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<style>
+    body{
+        background-color: burlywood;
+        font-family: monospace;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+    }
+    .container{
+        padding: 15px;
+    }
+    button{
+        border-radius: 10px;
+        background-color: gold;
+    }
+    .box{
+        gap: 10px;
+        background-color: dimgrey;
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
+<body>
+<div class="container">
+<div class="header">
+    <h1 class="text-center">Electricity Consumption Classifer</h1>
+    <br>
+</div>
+<br>
+<div class="box d-flex">
+    <img src="electricity.png" class="mx-auto">
+    <h1 class="text-warning">kWh</h1>
+    <input type="number" id="kwh" name="kwh" class="form-control" placeholder="Input kilowatt per hour ?">
+    <button onclick="category()">Consumption Classification</button>
+</div>
+</div>
+    <script>
+        function category(){
+            let usage = parseFloat(document.getElementById('kwh').value);
+
+            if (usage > 0 && usage <= 100){
+                window.alert("Lifeline Consumer -- Discounted electricity rates!");
+            }
+            if (usage > 100 && usage <= 200){
+                window.alert("Low Consumption -- Normal residential rate!");
+            }
+            if (usage > 200 && usage<= 300){
+                window.alert("Average Consumption -- Typical electricity usage!");
+            }
+            if (usage > 300 && usage <= 500){
+                window.alert("High Consumption -- Higher electricity usage!");
+            }
+            if (usage >= 501) {
+                window.alert("Very High Consumption -- Heavy electricity users!");
+            }
+            }
+            if (usage < 0){
+                window.alert("Please input a non-negative number!")
+
+        }
+    </script>
+</body>
+</html>
